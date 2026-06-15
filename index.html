@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floricultura Delamasso | Tradição no Grajaú</title>
+    <style>
+        /* PALETA DE CORES E CONFIGURAÇÕES GERAIS */
+        :root {
+            --rosa-bebe: #FFD1DC;
+            --azul-claro: #E0F2FE;
+            --verde-suave: #68BB59;
+            --verde-escuro: #2D5A27;
+            --texto-escuro: #333333;
+            --branco: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--texto-escuro);
+            background-color: var(--branco);
+            line-height: 1.6;
+        }
+
+        /* BANNER PRINCIPAL (HERO) */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--branco);
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+
+        .cta-button {
+            background-color: var(--verde-suave);
+            color: var(--branco);
+            padding: 15px 32px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: var(--verde-escuro);
+            transform: scale(1.05);
+        }
+
+        /* SEÇÃO SOBRE NÓS (HUMANIZADA) */
+        .sobre {
+            padding: 80px 20px;
+            background-color: var(--azul-claro);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sobre-container {
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sobre-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .sobre-texto h2 {
+            font-size: 2.2rem;
+            color: var(--verde-escuro);
+            margin-bottom: 20px;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* VITRINE DE PRODUTOS */
+        .produtos {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .produtos h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--verde-escuro);
+            margin-bottom: 50px;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card-produto {
+            background: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--azul-claro);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s;
+        }
+
+        .card-produto:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-produto img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .produto-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .produto-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .preco {
+            color: var(--verde-escuro);
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-pagar {
+            display: block;
+            background-color: var(--rosa-bebe);
+            color: #555;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-pagar:hover {
+            background-color: #ffb6c1;
+            color: #000;
+        }
+
+        /* RODAPÉ (FOOTER) */
+        footer {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .sobre-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Floricultura Delamasso</h1>
+        <p>Mais de 10 anos de tradição colorindo e emocionando a região do Grajau com flores frescas e arranjos exclusivos.</p>
+        <a href="https://wa.me/5511912478978" class="cta-button" target="_blank">Fale Conosco: 11 912478978</a>
+    </section>
+
+    <section class="sobre">
+        <div class="sobre-container">
+            <div class="sobre-img">
+                <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80" alt="Nossa Floricultura no Grajau">
+            </div>
+            <div class="sobre-texto">
+                <h2>Nossa Tradição no Grajaú</h2>
+                <p>Há mais de uma década, a <strong>Floricultura Delamasso</strong> faz parte dos momentos mais importantes da vida dos nossos clientes. Nascemos no coração do Grajaú com a missão de transformar sentimentos em belíssimos arranjos.</p>
+                <p>Aqui, cada flor é selecionada individualmente e cuidada com carinho humano, garantindo que você leve para casa frescor, perfume e durabilidade. Seja para presentear quem você ama ou para decorar seu evento, nossa família está pronta para te atender.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="produtos">
+        <h2>Nossas Flores Mais Desejadas</h2>
+        <div class="grid-produtos">
+            
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rosas Coloridas">
+                <div class="produto-info">
+                    <h3>Buquê de Rosas Mistas</h3>
+                    <div class="preco">R$ 120,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.pexels.com/photos/33416844/pexels-photo-33416844.jpeg" alt="Girassóis">
+                <div class="produto-info">
+                    <h3>Arranjo de Girassóis</h3>
+                    <div class="preco">R$ 85,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1774568705680-b483ae053a26?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tulipas">
+                <div class="produto-info">
+                    <h3>Vaso de Tulipas</h3>
+                    <div class="preco">R$ 150,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=400&q=80" alt="Orquídeas">
+                <div class="produto-info">
+                    <h3>Orquídea Phalaenopsis</h3>
+                    <div class="preco">R$ 90,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1650291880418-5453ffac50cd?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lírios">
+                <div class="produto-info">
+                    <h3>Maço de Lírios Brancos</h3>
+                    <div class="preco">R$ 110,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1683120099548-4f6cb88b1a60?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gérberas">
+                <div class="produto-info">
+                    <h3>Cesta de Gérberas Coloridas</h3>
+                    <div class="preco">R$ 95,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1652283322449-e3de5c6f387a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hortênsias">
+                <div class="produto-info">
+                    <h3>Vaso de Hortênsias Azuis</h3>
+                    <div class="preco">R$ 130,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1606041008023-472dfb5e530f?auto=format&fit=crop&w=400&q=80" alt="Margaridas">
+                <div class="produto-info">
+                    <h3>Arranjo Campo de Margaridas</h3>
+                    <div class="preco">R$ 70,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.pexels.com/photos/34463058/pexels-photo-34463058.jpeg" alt="Cravos">
+                <div class="produto-info">
+                    <h3>Buquê Clássico de Cravos</h3>
+                    <div class="preco">R$ 80,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.pexels.com/photos/35130793/pexels-photo-35130793.jpeg" alt="Astroemélias">
+                <div class="produto-info">
+                    <h3>Arranjo de Astroemélias</h3>
+                    <div class="preco">R$ 85,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=400&q=80" alt="Peônias">
+                <div class="produto-info">
+                    <h3>Buquê de Peônias Luxo</h3>
+                    <div class="preco">R$ 220,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.pexels.com/photos/29851826/pexels-photo-29851826.jpeg" alt="Antúrios">
+                <div class="produto-info">
+                    <h3>Vaso de Antúrio Vermelho</h3>
+                    <div class="preco">R$ 105,00</div>
+                    <a href="#" class="btn-pagar">Comprar Agora</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Floricultura Delamasso</strong></p>
+        <p>Tradição e Qualidade há mais de 10 anos no Grajaú - São Paulo/SP</p>
+        <p>Telefone / WhatsApp: (11) 91247-8978</p>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Floricultura Delamasso. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
